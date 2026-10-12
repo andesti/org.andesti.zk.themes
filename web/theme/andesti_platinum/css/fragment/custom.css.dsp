@@ -363,29 +363,30 @@ input[type="radio"]:checked:before { background-color: #6096ba; }
 .desktop-header .desktop-user-panel .z-separator-vertical-bar{height:11px!important;border-color:rgba(255,255,255,0.6)!important;}
 .desktop-header .desktop-user-panel .desktop-header-username,.desktop-header .desktop-user-panel .link{text-shadow:0 1px 2px rgba(0,0,0,0.35);}
 
-<%-- FIX: botones de formularios de parametros (Seleccion) y barra de Anexos: activos negros / desactivados grises --%>
+<%-- FIX: botones de formularios de parametros (Seleccion) y barra de Anexos: icono negro (activo) / gris (desactivado), fondo blanco --%>
 .z-groupbox .grid-layout .z-button, .z-groupbox .grid-layout .z-button:focus,
 .z-groupbox .grid-layout .z-toolbarbutton,
 .z-groupbox .grid-layout .z-datebox-button,
 .z-toolbar .z-toolbar-content .z-button, .z-toolbar .z-toolbar-content .z-button:focus,
-.z-toolbar .z-toolbar-popup .z-button, .z-toolbar .z-toolbar-popup .z-button:focus{background:#000000!important;background-image:none!important;border-color:#000000!important;color:#ffffff!important;opacity:1!important;box-shadow:none!important;}
+.z-toolbar .z-toolbar-popup .z-button, .z-toolbar .z-toolbar-popup .z-button:focus{background:#ffffff!important;background-image:none!important;border-color:#cccccc!important;color:#000000!important;opacity:1!important;box-shadow:none!important;}
+.z-groupbox .grid-layout .z-toolbarbutton{border-color:transparent!important;background:transparent!important;}
 .z-groupbox .grid-layout .z-button:not([disabled]):hover,
 .z-groupbox .grid-layout .z-toolbarbutton:not([disabled]):hover,
 .z-groupbox .grid-layout .z-datebox-button:hover,
 .z-toolbar .z-toolbar-content .z-button:not([disabled]):hover,
-.z-toolbar .z-toolbar-popup .z-button:not([disabled]):hover{background:#333333!important;border-color:#333333!important;color:#ffffff!important;}
+.z-toolbar .z-toolbar-popup .z-button:not([disabled]):hover{background:#eeeeee!important;color:#000000!important;}
 .z-groupbox .grid-layout .z-button [class*="z-icon-"], .z-groupbox .grid-layout .z-button [class*="z-icon-"]:before,
 .z-groupbox .grid-layout .z-toolbarbutton [class*="z-icon-"], .z-groupbox .grid-layout .z-toolbarbutton [class*="z-icon-"]:before,
 .z-groupbox .grid-layout .z-datebox-button [class*="z-icon-"], .z-groupbox .grid-layout .z-datebox-button [class*="z-icon-"]:before,
 .z-toolbar .z-toolbar-content .z-button [class*="z-icon-"], .z-toolbar .z-toolbar-content .z-button [class*="z-icon-"]:before,
-.z-toolbar .z-toolbar-popup .z-button [class*="z-icon-"], .z-toolbar .z-toolbar-popup .z-button [class*="z-icon-"]:before{color:#ffffff!important;}
+.z-toolbar .z-toolbar-popup .z-button [class*="z-icon-"], .z-toolbar .z-toolbar-popup .z-button [class*="z-icon-"]:before{color:#000000!important;}
 .z-groupbox .grid-layout .z-button[disabled],
 .z-groupbox .grid-layout .z-toolbarbutton[disabled],
 .z-groupbox .grid-layout .z-datebox-disabled .z-datebox-button,
 .z-toolbar .z-toolbar-content .z-button[disabled],
-.z-toolbar .z-toolbar-popup .z-button[disabled]{background:#d6d6d6!important;background-image:none!important;border-color:#d6d6d6!important;color:#8a8a8a!important;opacity:1!important;cursor:default!important;}
+.z-toolbar .z-toolbar-popup .z-button[disabled]{background:#f2f2f2!important;background-image:none!important;border-color:#dddddd!important;color:#a8a8a8!important;opacity:1!important;cursor:default!important;}
 .z-groupbox .grid-layout .z-button[disabled] [class*="z-icon-"], .z-groupbox .grid-layout .z-button[disabled] [class*="z-icon-"]:before,
 .z-groupbox .grid-layout .z-toolbarbutton[disabled] [class*="z-icon-"], .z-groupbox .grid-layout .z-toolbarbutton[disabled] [class*="z-icon-"]:before,
 .z-groupbox .grid-layout .z-datebox-disabled .z-datebox-button [class*="z-icon-"], .z-groupbox .grid-layout .z-datebox-disabled .z-datebox-button [class*="z-icon-"]:before,
 .z-toolbar .z-toolbar-content .z-button[disabled] [class*="z-icon-"], .z-toolbar .z-toolbar-content .z-button[disabled] [class*="z-icon-"]:before,
-.z-toolbar .z-toolbar-popup .z-button[disabled] [class*="z-icon-"], .z-toolbar .z-toolbar-popup .z-button[disabled] [class*="z-icon-"]:before{color:#8a8a8a!important;}
+.z-toolbar .z-toolbar-popup .z-button[disabled] [class*="z-icon-"], .z-toolbar .z-toolbar-popup .z-button[disabled] [class*="z-icon-"]:before{color:#a8a8a8!important;}
