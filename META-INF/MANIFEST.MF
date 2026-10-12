@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AndesTI ZK Consolidated Themes
+Bundle-SymbolicName: org.andesti.zk.themes
+Bundle-Version: 1.0.0.202609251000
+Bundle-Vendor: AndesTI
+Fragment-Host: org.adempiere.ui.zk;bundle-version="[11.0.0,14.0.0)"
+Automatic-Module-Name: org.andesti.zk.themes
+Bundle-RequiredExecutionEnvironment: JavaSE-17

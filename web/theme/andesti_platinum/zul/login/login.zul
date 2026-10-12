@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk>
+<zscript><![CDATA[
+	/* AndesTI: logo del login y favicon desde AD_ClientInfo del Grupo Empresarial System.
+	   Login: Logo, si no Logo Web. Favicon: Logo Web, si no Logo. Si no hay imagen, quedan los del tema. */
+	String andestiSystemLogoUri(boolean logoFirst) {
+		try {
+			org.compiere.model.MClientInfo ci = org.compiere.model.MClientInfo.get(0);
+			if (ci == null)
+				return null;
+			int first = logoFirst ? ci.getLogo_ID() : ci.getLogoWeb_ID();
+			int second = logoFirst ? ci.getLogoWeb_ID() : ci.getLogo_ID();
+			int id = first > 0 ? first : second;
+			if (!(id > 0))
+				return null;
+			org.compiere.model.MImage mi = org.compiere.model.MImage.get(id);
+			byte[] d = mi != null ? mi.getData() : null;
+			if (d == null || d.length < 4)
+				return null;
+			String mime = "image/png";
+			int b0 = d[0] & 0xFF;
+			if (b0 == 0xFF) mime = "image/jpeg";
+			else if (b0 == 0x47) mime = "image/gif";
+			else if (b0 == 0x3C) mime = "image/svg+xml";
+			return "data:" + mime + ";base64," + java.util.Base64.getEncoder().encodeToString(d);
+		} catch (Throwable e) {
+			return null;
+		}
+	}
+	String andestiLoginLogo = andestiSystemLogoUri(true);
+	String andestiFavicon = andestiSystemLogoUri(false);
+	if (andestiLoginLogo != null || andestiFavicon != null)
+		org.zkoss.zk.ui.util.Clients.evalJavaScript(
+			"(function(u,f){if(u){var s=document.getElementById('andesti-logo-css');"
+			+ "if(!s){s=document.createElement('style');s.id='andesti-logo-css';document.head.appendChild(s);}"
+			+ "s.textContent='.login-box-header-logo img{content:url(\"'+u+'\");width:auto!important;height:auto!important;max-width:260px!important;max-height:110px!important;object-fit:contain;}';}"
+			+ "if(f){var l=document.querySelector('link[rel~=\"icon\"]');"
+			+ "if(!l){l=document.createElement('link');l.rel='icon';document.head.appendChild(l);}"
+			+ "l.href=f;}})('" + (andestiLoginLogo != null ? andestiLoginLogo : "") + "','"
+			+ (andestiFavicon != null ? andestiFavicon : "") + "');");
+]]></zscript>
+<borderlayout id="layout" sclass="login-window">
+	<center border="none" autoscroll="true" style="background-color: transparent;">
+		<vbox pack="center" align="center" style="background-color: transparent;" hflex="1" vflex="1">
+			<window use="org.adempiere.webui.window.LoginWindow" id="loginWindow"/>
+		</vbox>
+	</center>
+	<east sclass="login-east-panel">
+		<include src="~./theme/andesti_platinum/zul/login/login-right.zul"/>
+	</east>
+	<west sclass="login-west-panel">
+		<include src="~./theme/andesti_platinum/zul/login/login-left.zul"/>
+	</west>
+	<north sclass="login-north-panel">
+		<include src="~./theme/andesti_platinum/zul/login/login-top.zul"/>
+	</north>
+	<south sclass="login-south-panel">
+		<include src="~./theme/andesti_platinum/zul/login/login-bottom.zul"/>
+	</south>
+</borderlayout>
+</zk>

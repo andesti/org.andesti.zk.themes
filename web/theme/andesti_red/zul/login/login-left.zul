@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Panel de marca del login (estilo Atlas): columna izquierda.
+  El fondo teal y la imagen los aporta el CSS (.login-west-panel).
+-->
+<zk>
+	<div sclass="login-brand-panel">
+		<div sclass="login-brand-content">
+			<image src="~./theme/andesti_red/images/login-logo.png" sclass="login-brand-logo"/>
+			<div sclass="login-brand-tagline">Aumenta la productividad de tu empresa.</div>
+		</div>
+	</div>
+</zk>

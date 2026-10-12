@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language>
+	<addon-name>andesti_themes</addon-name>
+	<language-name>xul/html</language-name>
+	<javascript-module name="andesti.theme.teal"     version="202606010000" />
+	<javascript-module name="andesti.theme.orange"   version="202606010000" />
+	<javascript-module name="andesti.theme.platinum" version="202606010000" />
+	<javascript-module name="andesti.theme.charcoal" version="202606010000" />
+	<javascript-module name="andesti.theme.almond"   version="202606010000" />
+	<javascript-module name="andesti.theme.red"      version="202606010000" />
+	<javascript-module name="andesti.theme.dosportres" version="202606010000" />
+</language>
